@@ -1,0 +1,25 @@
+{
+  "name": "faiba",
+  "version": "1.0.0",
+  "description": "Create a Tree structure using an Array or Object.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hxAri/Faiba.git"
+  },
+  "keywords": [
+    "object",
+    "faiba",
+    "array",
+    "tree"
+  ],
+  "author": "hxari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hxAri/Faiba/issues"
+  },
+  "homepage": "https://github.com/hxAri/Faiba#readme"
+}
