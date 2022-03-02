@@ -1,0 +1,24 @@
+{
+    "name": "faiba/faiba",
+    "type": "library",
+    "license": "MIT",
+    "description": "Create a Tree structure using an Array.",
+    "keywords": [
+        "php",
+        "tree"
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Faiba\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "hxAri",
+            "email": "ari160824@gmail.com"
+        }
+    ]
+}
