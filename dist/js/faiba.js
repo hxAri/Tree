@@ -96,20 +96,3 @@
   return obj;
   
 }));
-
-window.addEventListener( "load", function() {
-  this.innerHTML = Faiba.looper({
-    el: "#root",
-    data: {
-      self: {
-        id: 160824,
-        name: "hxAri",
-        user: "hxari",
-        info: {
-          bio: "Everybody Needs A Programmer."
-        }
-      },
-      you: []
-    }
-  });
-});
