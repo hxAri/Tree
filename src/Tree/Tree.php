@@ -1,8 +1,8 @@
 <?php
 
-namespace Faiba;
+namespace Tree;
 
-class Faiba
+class Tree
 {
     
     const LINE = 1;
