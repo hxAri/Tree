@@ -1,7 +1,7 @@
 {
-    "name": "faiba/faiba",
+    "name": "hxari/tree",
     "type": "library",
-    "license": "MIT",
+    "license": "GNU",
     "description": "Create a Tree structure using an Array.",
     "keywords": [
         "php",
@@ -12,7 +12,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Faiba\\": "src/"
+            "Tree\\": "src/"
         }
     },
     "authors": [
