@@ -190,4 +190,4 @@ Faiba\Faiba|POINT|public|Int
 
 
 # License
-All source code under [MIT License](https://github.com/hxAri/PHPTree/blob/main/LICENSE)
+All source code under [GNU General Public License](https://github.com/hxAri/Faiba/blob/main/LICENSE)
