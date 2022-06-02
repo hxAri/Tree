@@ -1,5 +1,5 @@
 
-![Faiba Avatar](https://raw.githubusercontent.com/hxAri/hxAri.github.io/main/dist/img/avatar/31sJ3mJPD9xDc.png)
+![Faiba Avatar](https://raw.githubusercontent.com/hxAri/hxAri/main/assets/images/1653507345%3B50XUUPql.z.png)
 
 # Faiba
 Create a Tree structure using an Array or Object.
