@@ -1,89 +1,32 @@
 
 ![Faiba Avatar](https://raw.githubusercontent.com/hxAri/hxAri/main/assets/images/1653507345%3B50XUUPql.z.png)
 
-# Faiba
+## Abouts
 Create a Tree structure using an Array or Object.
 You want to create a tree structure like in the Command Line Interface?
-Sans!... *Faiba* is the solution!.. It's really very simple and without the hassle!
+Sans!... *Tree* is the solution!.. It's really very simple and without the hassle!
 
-In addition to using PHP, Faiba has also been made for the JavaScript version,
+In addition to using PHP, Tree has also been made for the JavaScript version,
 but now it only supports HTML display, for the next version maybe I will add a feature
-so that the JavaScript version of Faiba can run on the Command Line Interface along with NodeJS.
+so that the JavaScript version of Tree can run on the Command Line Interface along with NodeJS.
 
-<hr />
-
-# Install
-Install with Npm
-```
-npm install faiba
-```
-CDN via jsDelivr
-```
-https://cdn.jsdelivr.net/gh/hxAri/Faiba/dist/js/faiba.js
-```
-
-# Usage
-This is just an example, you can implement it however you like later.
-```html
-<div class="main">
-  <pre id="root"></pre>
-</div>
-
-<script type="text/javascript">
-  
-  window.addEventListener( "load", function() {
-    Faiba.create({
-      el: "#root",
-      data: {
-        self: {
-          id: 160824,
-          name: "hxAri",
-          user: "hxari",
-          info: {
-            bio: "Everybody Needs A Programmer."
-          }
-        },
-        you: []
-      }
-    });
-  });
-  
-</script>
-```
-This will display a very beautiful tree structure inside the &lt;pre&gt; tag
-```
-├── self
-│   ├── id
-│   │   └── 160824
-│   ├── name
-│   │   └── hxAri
-│   ├── user
-│   │   └── hxari
-│   └── info
-│       └── bio
-│           └── Everybody Needs A Programmer.
-└── you
-```
-
-<hr />
-
-# Install
+## Install
 Install with Composer
 ```
-composer require hxari/phptree
+composer require hxari/tree
 ```
 Install with Wget
 ```
-wget https://raw.githubusercontent.com/hxAri/Faiba/main/src/PHPTree/Tree.php
+wget https://raw.githubusercontent.com/hxAri/Tree/main/src/PHPTree/Tree.php
 ```
 Install with Git
 ```
-git clone https://github.com/hxAri/Faiba
+git clone https://github.com/hxAri/Tree
 ```
 
 Or you can also download it directly from [Github](https://github.com/hxAri/PHPTree/archive/refs/heads/main.zip) if you don't want to bother.
 
-# Usage
+## Usage
 Very simple usage.
 ```php
 
@@ -93,10 +36,10 @@ use Faiba\Faiba;
 require "vendor/autoload.php";
 
 // If you use Git/ Download.
-require "Faiba/Faiba.php";
+require "Tree/Tree.php";
 
 // If you use Wget.
-require "Faiba.php";
+require "Tree.php";
 
 // Suppose you have an array.
 $array = [
@@ -122,7 +65,7 @@ $array = [
 ];
 
 // Creating a tree structure.
-echo Faiba::create( $array );
+echo Tree::create( $array );
 ```
 This will display.
 ```
@@ -148,7 +91,7 @@ This will display.
         └── Horse
 ```
 
-# Methods
+## Methods
 Explanation for method.<br/>
 
 The `::create` method has three parameters which are:
@@ -176,7 +119,7 @@ Faiba::setKeyHandler( function( Mixed $key ) {
 ```
 For `::setValHandler` method also has the same function.
 
-# Constants
+## Constants
 **Class**|**Constants**|**Type**|**Value**
 :-----:|:-----:|:-----:|:-----:
 Faiba\Faiba|SPACE|public|String
@@ -189,5 +132,5 @@ Faiba\Faiba|DOUBLE_POINT|public|String
 Faiba\Faiba|POINT|public|Int
 
 
-# License
+## License
 All source code under [GNU General Public License](https://github.com/hxAri/Faiba/blob/main/LICENSE)
