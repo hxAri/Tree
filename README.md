@@ -1,5 +1,5 @@
 
-![Tree Avatar](https://raw.githubusercontent.com/hxAri/hxAri/main/assets/images/1653507345%3B50XUUPql.z.png)
+![Tree Avatar](https://raw.githubusercontent.com/hxAri/hxAri/main/public/images/1653507345%3B50XUUPql.z.png)
 
 ## Abouts
 Create a Tree structure using an Array or Object.
