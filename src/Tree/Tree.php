@@ -2,6 +2,11 @@
 
 namespace Tree;
 
+/*
+ * Tree
+ *
+ * @package Tree
+ */
 class Tree
 {
     
@@ -12,7 +17,8 @@ class Tree
      * Space Distance.
      *
      * @access Public
-     * @value String
+     *
+     * @values String
      */
     const SPACE = "    ";
     
@@ -22,7 +28,8 @@ class Tree
      * Line Types.
      *
      * @access Public
-     * @value String
+     *
+     * @values String
      */
     const STRAIGHT_LINE = "│   ";
     const MIDDLE_LINE = "├── ";
@@ -36,17 +43,45 @@ class Tree
      */
     const DOUBLE_POINT = ".. ";
     
-    protected static $keyHandler;
-    protected static $valHandler;
+    /*
+     * Tree key handler.
+     *
+     * @access Protected
+     *
+     * @values Callable
+     */
+    protected static Callable $keyHandler;
     
-    public static function create( Array $data, Int $start = 0, Int $flags = 0 )
+    /*
+     * Tree value handler.
+     *
+     * @access Protected
+     *
+     * @values Callable
+     */
+    protected static Callable $valHandler;
+    
+    /*
+     * Create tree structure.
+     *
+     * @access Public Static
+     *
+     * @params Array $data
+     * @params Int $start
+     * @params Int $flags
+     *
+     * @return String
+     */
+    public static function create( Array $data, Int $start = 0, Int $flags = 0 ): String
     {
-        if( self::$keyHandler === Null ) {
+        if( self::$keyHandler === Null )
+        {
             self::$keyHandler = function( Mixed $key ) {
                 return( $key );
             };
         }
-        if( self::$valHandler === Null ) {
+        if( self::$valHandler === Null )
+        {
             self::$valHandler = function( Mixed $val ) {
                 return( $val );
             };
@@ -54,12 +89,12 @@ class Tree
         
         $space = "";
         
-        if( $start !== 0 ) {
+        if( $start !== 0 )
+        {
             for( $i = 0; $i < $start; $i++ ) {
                 $space .= " ";
             }
         }
-        
         return( self::fELoop( $data, $space, $flags === 0? self::LINE : $flags ) );
     }
     
@@ -91,11 +126,32 @@ class Tree
         self::$valHandler = $handler;
     }
     
-    private static function key( Mixed $key )
+    /*
+     * Call tree key handler.
+     *
+     * @access Private Static
+     *
+     * @params Mixed $key
+     *
+     * @return String
+     */
+    private static function key( Mixed $key ): String
     {
         return( call_user_func_array( self::$keyHandler, [$key] ) . "\n" );
     }
     
+    /*
+     * Call tree value handler.
+     *
+     * @access Private Static
+     *
+     * @params Mixed $val
+     * @params String $space
+     * @params String $line
+     * @params Int $flags
+     *
+     * @return String
+     */
     private static function val( Mixed $val, String $space, String $line, Int $flags ): String
     {
         if( is_array( $val ) ) {
@@ -106,28 +162,45 @@ class Tree
         return "{$result}\n";
     }
     
-    private static function fELoop( Array $data, String $space, Int $flags )
+    /*
+     * Looping.
+     *
+     * @access Private Static
+     *
+     * @params Array $data
+     * @params String $space
+     * @params Int $flags
+     *
+     * @return String
+     */
+    private static function fELoop( Array $data, String $space, Int $flags ): String
     {
         $r = "";
         $i = 0;
         
-        if( count( $data ) !== 0 ) {
-            foreach( $data As $k => $v ) {
-                
+        if( count( $data ) !== 0 )
+        {
+            foreach( $data As $k => $v )
+            {
                 $i++;
-                
-                if( count( $data ) === $i ) {
-                    if( $flags !== self::POINT ) {
+                if( count( $data ) === $i )
+                {
+                    if( $flags !== self::POINT )
+                    {
                         $lK = self::LAST_LINE;
-                    } else {
+                    }
+                    else {
                         $lK = self::DOUBLE_POINT;
                     }
                     $lA = self::SPACE;
-                } else {
-                    if( $flags !== self::POINT ) {
+                }
+                else {
+                    if( $flags !== self::POINT )
+                    {
                         $lK = self::MIDDLE_LINE;
                         $lA = self::STRAIGHT_LINE;
-                    } else {
+                    } else
+                    {
                         $lK = self::DOUBLE_POINT;
                         $lA = self::SPACE;
                     }
@@ -136,39 +209,50 @@ class Tree
                 $r .= $space;
                 $r .= $lK;
                 
-                if( is_int( $k ) ) {
-                    if( is_array( $v ) ) {
+                if( is_int( $k ) )
+                {
+                    if( is_array( $v ) )
+                    {
                         $r .= self::key( "Array" );
                         $r .= self::fELoop( $v, $space . $lA, $flags );
-                    } else {
+                    }
+                    else {
                         $r .= self::val( $v, $space, $lA, $flags );
                     }
-                } else {
+                }
+                else {
                     
                     $r .= self::key( $k );;
                     
-                    if( is_array( $v ) ) {
+                    if( is_array( $v ) )
+                    {
                         $r .= self::fELoop( $v, $space . $lA, $flags );
-                    } else {
+                    }
+                    else {
                         $r .= $space;
                         $r .= $lA;
                         
-                        if( $flags !== self::POINT ) {
+                        if( $flags !== self::POINT )
+                        {
                             $r .= self::LAST_LINE;
-                        } else {
+                        }
+                        else {
                             $r .= self::DOUBLE_POINT;
                         }
                         $r .= self::val( $v, $space, $lA, $flags );
                     }
                 }
             }
-        } else {
+        }
+        else {
             
             $r .= $space;
             
-            if( $flags !== self::POINT ) {
+            if( $flags !== self::POINT )
+            {
                 $r .= self::LAST_LINE;
-            } else {
+            }
+            else {
                 $r .= self::DOUBLE_POINT;
             }
             $r .= "Empty\n";
